@@ -38,13 +38,15 @@ fi
 # OK, proceed..
 
 NUMBER=$1				#The number the user provided
-HALF=$((NUMBER / 2 + 1))		#Half of that number plus 1 to round up
+TOP=`echo "sqrt($NUMBER)" |
+	bc -l |
+	sed 's/\..*//'`			#The square root of it
 
 FACTORS=0				#Factors we located
 
 n=2
 
-while [ $n -lt $HALF ]
+while [ $n -le $TOP ]
 do
 	REMAINDER=$((NUMBER % n))
 
