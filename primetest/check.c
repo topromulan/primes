@@ -1,4 +1,12 @@
 
+/* 
+ * A function to test if a number is prime
+ *
+ * 20-22 February 2009 by Dale Anderson
+ * dra@redevised.net
+ *
+ */
+
 #include <stdio.h>
 #include <math.h>
 
