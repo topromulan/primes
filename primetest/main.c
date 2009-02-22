@@ -36,19 +36,33 @@ int main(void)
 #ifdef LOADED
 		if(checkprime(l-1))
 		{
-			printf("Bingo. %ld was prime.\n", l-1);
+			printf("\nBingo. %ld was prime.", l-1);
+		}
+		else
+		{
+			printf(".");
 		}
 		if(checkprime(l+1))
 		{
-			printf("Bingo. %ld was prime.\n", l+1);
+			printf("\nBingo. %ld was prime.", l+1);
+		}
+		else
+		{
+			printf(".");
 		}
 #else
 		if(checkprime(l))
 		{
-			printf("Bingo. %ld was prime.\n", l);
+			printf("\nBingo. %ld was prime.", l);
+		}
+		else
+		{
+			printf(".");
 		}
 #endif
 	}
+
+	printf("\n");
 
 	return 0;
 }
