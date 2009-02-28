@@ -43,6 +43,11 @@ TOP=`echo "sqrt($NUMBER)+1" |
 	bc -l |
 	sed 's/\..*//'`			#The square root of it plus one
 
+if [ $NUMBER == 2 ]			#Above we add one to the sqrt
+then					# in the unique case of 2 this
+	TOP=1				# causes a problem
+fi
+
 FACTORS=0				#Factors we located
 
 n=2
