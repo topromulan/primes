@@ -38,9 +38,10 @@ fi
 # OK, proceed..
 
 NUMBER=$1				#The number the user provided
-TOP=`echo "sqrt($NUMBER)" |
+
+TOP=`echo "sqrt($NUMBER)+1" |
 	bc -l |
-	sed 's/\..*//'`			#The square root of it
+	sed 's/\..*//'`			#The square root of it plus one
 
 FACTORS=0				#Factors we located
 
