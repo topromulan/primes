@@ -21,6 +21,7 @@ int checkprime(unsigned long number)
 	 *  Numbers between 1-3 are prime.
 	 *  Else the number must be a multiple of 6 +/- 1 to consider.
 	 *
+	 * This covers even numbers and divisible-by-3 numbers.
 	 */
 
 	l = number % 6;
@@ -32,12 +33,9 @@ int checkprime(unsigned long number)
 
 	/* Test 2.
 	 *
-	 * See if the number is divisible by any odd numbers
-	 *  between 5 and its square root.
-	 *
-	 * This covers even numbers and divisible-by-3 numbers.
-	 *
-	 * 2 and 3 are covered in test 1.
+	 * Check if the number is divisible by any odd numbers
+	 *  5 or 7 plus any multiple of 6 
+	 *  less than number's square root.
 	 *
 	 */
 
