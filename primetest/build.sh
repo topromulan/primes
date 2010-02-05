@@ -1,6 +1,7 @@
+#!/bin/bash
 
-LOWBALL=1234567890
-HIGHBALL=1999999999
+LOWBALL=1
+HIGHBALL=10000000
 
 if [ ! -d bin ]
 then
@@ -15,12 +16,25 @@ gcc -o bin/check				\
 	-D LOWBALL=$LOWBALL			\
 	main.c check.c				\
 	-lm -ffast-math				&&
+
+gcc -o bin/check2				\
+	-D HIGHBALL=$HIGHBALL			\
+	-D LOWBALL=$LOWBALL			\
+	main.c check2.c				\
+	-lm -ffast-math				&&
 	
 gcc -o bin/check-loaded				\
 	-D LOADED				\
 	-D HIGHBALL=$HIGHBALL			\
 	-D LOWBALL=$LOWBALL			\
 	main.c check.c				\
+	-lm -ffast-math				&&
+
+gcc -o bin/check2-loaded				\
+	-D LOADED				\
+	-D HIGHBALL=$HIGHBALL			\
+	-D LOWBALL=$LOWBALL			\
+	main.c check2.c				\
 	-lm -ffast-math				&&
 
 gcc -o bin/check-naive				\

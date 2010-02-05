@@ -2,7 +2,7 @@
 /* 
  * A program to test checkprime()
  *
- * 20-22 February 2009,4-? February 2010 by Dale Anderson
+ * 20-22 February 2009 by Dale Anderson
  * dra@redevised.net
  *
  */
@@ -15,7 +15,6 @@ int checkprime(unsigned long number);
 int main(void)
 {
 	unsigned long l;
-	unsigned long total=0;
 
 #ifdef LOADED
 	unsigned long begin;
@@ -36,18 +35,34 @@ int main(void)
 	{
 #ifdef LOADED
 		if(checkprime(l-1))
-			total++;
+		{
+			printf("\nBingo. %ld was prime.", l-1);
+		}
+		else
+		{
+			printf(".");
+		}
 		if(checkprime(l+1))
-			total++;
+		{
+			printf("\nBingo. %ld was prime.", l+1);
+		}
+		else
+		{
+			printf(".");
+		}
 #else
-		if(checkprime(l)) {
-			total++;
-//			printf("%lu was prime\n", l);
+		if(checkprime(l))
+		{
+			printf("\nBingo. %ld was prime.", l);
+		}
+		else
+		{
+			printf(".");
 		}
 #endif
 	}
 
-	printf("I find %lu primes between %lu and %lu\n", total, LOWBALL, HIGHBALL);
+	printf("\n");
 
 	return 0;
 }
